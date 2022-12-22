@@ -1,0 +1,33 @@
+Source: node-thenify
+Section: javascript
+Priority: optional
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Preyass Chandran <preyassc@hotmail.com>
+Build-Depends: debhelper-compat (= 13)
+ , dh-sequence-nodejs
+ , mocha <!nocheck>
+ , node-any-promise (>= 1.0.0) <!nocheck>
+Standards-Version: 4.5.1
+Vcs-Browser: https://salsa.debian.org/js-team/node-thenify
+Vcs-Git: https://salsa.debian.org/js-team/node-thenify.git
+Homepage: https://github.com/thenables/thenify
+Testsuite: autopkgtest-pkg-nodejs
+Rules-Requires-Root: no
+
+Package: node-thenify
+Architecture: all
+Depends: ${misc:Depends}
+ , node-any-promise (>= 1.0.0)
+Description: Promisify a callback-based function
+ Some features of this module:
+  - Preserves function names
+  - Uses a native promise implementation if available and tries to fall back to
+    a promise implementation such as bluebird
+  - Converts multiple arguments from the callback into an Array, also support
+    change the behavior by options.multiArgs
+  - Resulting function never deoptimizes
+  - Supports both callback and promise style
+ An added benefit is that thrown errors in that async function will be caught
+ by the promise!
+ .
+ Node.js is an event-based server-side JavaScript engine.
